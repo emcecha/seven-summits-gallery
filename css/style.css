@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid 1px black; */
+}
+
+html {
+    font-size: 10px;
+    font-family: "Raleway";
+}
+
+body {
+    background-color: #274060;
+}
+
+button:focus {
+    outline: none;
+}
+
+.container {
+    max-width: 100vh;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #5894E2;
+    margin-bottom: 3vh;
+    border-bottom: solid 2vh rgba(255,255,255,0.5);
+}
+
+.header__text {
+    color: #1A2D44;
+    font-size: 4.5rem;
+    padding: 3vh 0 3.5vh;
+    margin-left: 17vh;
+    position: relative;
+    font-weight: 800;
+}
+
+.header__text::before {
+    content: "";
+    position: absolute;
+    bottom: -1vh;
+    left: 0;
+    width: 18%;
+    height: 35%;
+    background-image: linear-gradient(to bottom, #1A2D44 45%, #274060 90%);
+    clip-path: polygon(0 100%, 22% 35%, 34% 60%, 50% 0%, 65% 50%, 75% 33%, 85% 60%, 88% 50%, 100% 100%);
+}
+
+.gallery__list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3vh;
+}
+
+.gallery__item {
+    width: 31vh;
+    height: 31vh;
+    overflow: hidden;
+    position: relative;
+    border: 1vh solid transparent;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.gallery__item:hover {
+    border-color: white;
+}
+
+.gallery__img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery__info-title {
+    position: absolute;
+    max-width: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.7);
+    transition: all 200ms ease-out;
+}
+
+.gallery__info-text {
+    display: none;
+}
+
+.gallery__item:hover .gallery__info-title {
+    max-width: 50%;
+}
+
+.gallery__info-title span {
+    display: block;
+    margin: 2vh 1vh;
+    overflow: hidden;
+    opacity: 0;
+    transition-delay: 180ms;
+    transition-property: opacity;
+    transition-duration: 100ms;
+}
+
+.gallery__mountain {
+    color: #1A2D44;
+    font-size: 1.6rem;
+}
+
+.gallery__altitude {
+    color: #FA7921;
+    font-size: 1.7rem;
+}
+
+.gallery__continent {
+    color: #1A2D44;
+    font-weight: normal;
+}
+
+.gallery__item:hover .gallery__info-title span {
+    opacity: 1;
+}
+
+.smoke::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    z-index: 999;
+}
+
+.fullScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background:rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullScreen .box {
+    width: 60vw;
+    height: 41vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.fullScreen img {
+    height: 100%;
+}
+
+.fullScreen .gallery__infobox {
+    background-color: rgba(255,255,255,0.7);
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: all 600ms;
+}
+
+.fullScreen .gallery__infobox.full-info {
+    background-color: rgba(255,255,255,1);
+    padding-bottom: 3vh;
+}
+
+.fullScreen h2 {
+    padding: 2vh 3vh;
+    max-width: 80%;
+    line-height: 1.2;
+}
+
+.fullScreen span {
+    font-size: 3rem;
+}
+
+.fullScreen p {
+    max-height: 0;
+    font-size: 1.6rem;
+    color: #1A2D44;
+    max-width: 80%;
+    padding: 0vh 3vh;
+    overflow: hidden;
+    transition: max-height 500ms;
+}
+
+.fullScreen .show-info {
+    max-height: 20vh;
+}
+
+.fullScreen .info {
+    position: absolute;
+    background-color: white;
+    top: 2vh;
+    right: 5%;
+    width: 9%;
+    height: 3rem;
+    border: none;
+    color: #5894E2;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 200ms;
+}
+
+.fullScreen .info:hover {
+    background-color: #5894E2;
+    color: white;
+}
+
+.fullScreen .info::before {
+    content: "";
+    position: absolute;
+    bottom: 99%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #5894E2;
+    clip-path: polygon(0 100%, 22% 35%, 34% 60%, 50% 0%, 65% 50%, 75% 33%, 85% 60%, 88% 50%, 100% 100%);
+    transition: height 200ms;
+}
+
+.fullScreen .info:hover::before {
+    height: 6rem;
+}
+
+.fullScreen .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3vh;
+    height: 3vh;
+    cursor: pointer;
+    display: block;
+    background: none;
+    border: none;
+    margin: 1vh;
+}
+
+.fullScreen .close::before {
+    content: "";
+    height: 0.5vh;
+    width: 95%;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    transform: rotate(45deg) translateY(-50%);
+    top: 50%;
+    left: 0;
+    border-radius: 50vh;
+    transition: background-color 200ms;
+}
+
+.fullScreen .close::after{
+    content: "";
+    height: 0.5vh;
+    width: 100%;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    transform: rotate(-45deg) translateY(-50%);
+    top: 50%;
+    left: 9%;
+    border-radius: 50vh;
+    transition: background-color 200ms;
+}
+
+.fullScreen .close:hover::after,
+.fullScreen .close:hover::before {
+    background-color: rgba(255,255,255,1);
+}
