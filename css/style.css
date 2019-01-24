@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700|Raleway:300,400,700,800');
 
 * {
     margin: 0;
@@ -22,7 +21,7 @@ button:focus {
 }
 
 .container {
-    max-width: 100vh;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -35,10 +34,10 @@ button:focus {
 .header__text {
     color: #1A2D44;
     font-size: 4.5rem;
+    font-family: "Montserrat Subrayada";
     padding: 3vh 0 3.5vh;
     margin-left: 17vh;
     position: relative;
-    font-weight: 800;
 }
 
 .header__text::before {
@@ -46,7 +45,7 @@ button:focus {
     position: absolute;
     bottom: -1vh;
     left: 0;
-    width: 18%;
+    width: 12%;
     height: 35%;
     background-image: linear-gradient(to bottom, #1A2D44 45%, #274060 90%);
     clip-path: polygon(0 100%, 22% 35%, 34% 60%, 50% 0%, 65% 50%, 75% 33%, 85% 60%, 88% 50%, 100% 100%);
@@ -62,8 +61,8 @@ button:focus {
 }
 
 .gallery__item {
-    width: 31vh;
-    height: 31vh;
+    width: 35vh;
+    height: 35vh;
     overflow: hidden;
     position: relative;
     border: 1vh solid transparent;
@@ -206,7 +205,7 @@ button:focus {
     position: absolute;
     background-color: white;
     top: 2vh;
-    right: 5%;
+    right: 2vh;
     width: 9%;
     height: 3rem;
     border: none;
@@ -234,7 +233,7 @@ button:focus {
 }
 
 .fullScreen .info:hover::before {
-    height: 6rem;
+    height: 4rem;
 }
 
 .fullScreen .close {
